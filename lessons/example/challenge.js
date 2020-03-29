@@ -1,0 +1,3 @@
+function wordBucket(words) {
+  return "";
+}

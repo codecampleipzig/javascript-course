@@ -1,0 +1,115 @@
+:root {
+  --bg-color: #36393f;
+  --bg-color-secondary: #2f3136;
+  --primary-color: #b9f6fb;
+  --border-color: white;
+}
+
+body {
+  background-color: #36393f;
+  font-family: "Avenir", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  color: white;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  background-color: var(--bg-color-secondary);
+  ;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+nav ul li+li {
+  margin-left: 1rem;
+}
+
+nav ul li {
+  font-size: 1.2rem;
+}
+
+.status::after {
+  content: "Pending";
+  margin: 2rem;
+  font-weight: 700;
+}
+
+.completed .status::after {
+  content: "Completed";
+  color: rgb(90, 203, 122);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.instructions, .console {
+  background-color: var(--bg-color-secondary);
+  width: 100%;
+  min-height: 300px;
+  padding: 0.5rem 0.8rem 2rem 0.8rem;
+}
+
+.instructions h2, .console h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3, h4 {
+  font-size: 1rem;
+}
+
+.files li::before {
+  content: "/"
+}
+
+pre {
+  margin: 0.3em 0 0.8em 0;
+  padding: 0.8rem 1rem;
+  background-color: rgb(65, 65, 56);
+  font-family: 'PT Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
