@@ -1,1 +1,0 @@
-const repoPath = "C:/Users/Franz/Desktop/projects/javascript-course";

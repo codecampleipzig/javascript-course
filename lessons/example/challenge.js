@@ -1,3 +1,0 @@
-function wordBucket(words) {
-  return "";
-}

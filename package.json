@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node generate-config.js"
+    /*call webpack directly; config.js is created automatically as a side-effect*/
+    "postinstall":""
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,13 @@
   },
   "homepage": "https://github.com/gabrielheinrich/javascript-course#readme",
   "devDependencies": {
+    "handlebars": "^4.7.3",
     "handlebars-loader": "^1.7.1",
+    "html-webpack-plugin": "^4.0.3",
     "webpack": "^4.42.1"
   },
   "dependencies": {
+    "highlight.js": "^9.18.1",
     "markdown-it": "^10.0.0"
   }
 }
