@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    /*call webpack directly; config.js is created automatically as a side-effect*/
-    "postinstall":""
+    "postinstall": ""
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,8 @@
     "handlebars": "^4.7.3",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^4.0.3",
-    "webpack": "^4.42.1"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "highlight.js": "^9.18.1",

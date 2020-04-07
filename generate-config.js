@@ -10,22 +10,22 @@ function getFolderContents (readPath) {
   // https://nodejs.org/dist/latest-v10.x/docs/api/fs.html#fs_class_fs_dirent
   fs.readdirSync(readPath, { withFileTypes: true })
     .forEach( dirent => {
+      console.log ( dirent );
       switch (dirent.isDirectory()) {
         case true:
           output[dirent.name] = ['folder'];
           break;
-        case false;
+        case false:
           //assumes all non-directories are files for simplicity of implementation
           output[dirent.name] = ['file'];
           break;
-        default:
-          break;
       }
     });
+  console.log(output);
   return output
 };
 
-getFileExtension (inputString) {
+function getFileExtension (inputString) {
   return inputString.slice((inputString.lastIndexOf(".") - 1 >>> 0) + 2)
 };
 
@@ -58,7 +58,7 @@ const inputDir = path.resolve(__dirname, 'src');
 const outputDirHidden = path.resolve(__dirname, 'dist');
 const outputDirPublic = path.resolve(__dirname, 'lessons');
 
-const { dirTreeObj, flatFilePathObject } = getDirectoryStructureAndFilePathObject(inputDir, outputDir, {});
+const { dirTreeObj, flatFilePathObject } = getDirectoryStructureAndFilePathObject(inputDir, '', {});
 
 const exportData = {
   "inputDir": inputDir,

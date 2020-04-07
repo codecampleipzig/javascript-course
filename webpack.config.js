@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { existingChallengeScriptFiles } = loadJSONifExists('config.json');
 
 const config = require('./generate-config.js')
-{ inputDir, outputDirHidden, outputDirPublic, flatFilePathObject } = config;
+const { inputDir, outputDirHidden, outputDirPublic, flatFilePathObject } = config;
 
 //////////////////
 // definitions
@@ -20,7 +20,7 @@ function loadJSONifExists (inputPath) {
 
 function newArrayByExtension (filePathObject, extension) {
   const filePathArray = [];
-  keyArray = Obj.keys(filePathObject);
+  const keyArray = Obj.keys(filePathObject);
   keyArray.forEach( elem => {
     if (filePathObject[elem] == extension) {
       filePathArray.push(elem)
@@ -30,7 +30,7 @@ function newArrayByExtension (filePathObject, extension) {
     }
   });
   return filePathArray
-});
+};
 
 function filterArrayByName (filePathArray, nameWithExtension) {
   filePathArray.filter( elem => {
@@ -38,7 +38,7 @@ function filterArrayByName (filePathArray, nameWithExtension) {
   });
 };
 
-preventOverwrite (filterArray, activeArray) {
+function preventOverwrite (filterArray, activeArray) {
   activeArray.filter( (elem) => {
     return filterArray.includes(elem)
   });
@@ -91,5 +91,5 @@ module.exports = {
     filename:'[name].js',
     path: outputDirPublic
   },
-  plugins: [].concat( generateMultipleHtmlWebpackPlugin(challengeIndexFiles) );
+  plugins: [].concat( generateMultipleHtmlWebpackPlugin(challengeIndexFiles) )
 };
